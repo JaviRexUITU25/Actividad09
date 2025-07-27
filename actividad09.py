@@ -32,8 +32,15 @@ while True:
         case "3":
             print("Lista actual: ", movies)
             print("-"*5 + "Buscar peliculas por genero: "+ "-" * 5)
-            show_movies = input("Ingrese el genero de la pelicula que desea buscar: ")
-            print("Generos: ",)
+            if movies:
+                search_movie = input("Ingrese el genero de la pelicula que desea buscar: ")
+                found_movies = [movie for movie in movies if movie[2].lower() == search_movie.lower()]
+                if found_movies:
+                    print(f"\nPeliculas encontradas para el genero '{search_movie}':")
+                    for i in found_movies:
+                        print(f"{i+1}, genero: {movies[i]}")
+                else:
+                    print("No se encontr<UNK> el genero")
         case "4":
             print("Lista actual: ", movies)
             remove_movie = input("¿Que pelicula desea eliminar?: ")
