@@ -1,6 +1,6 @@
 movies = []
 add_movie = []
-gender_ = []
+genre_ = []
 while True:
     print("-"*8 + "CATALOGO DE PELICULAS" + "-" *8)
     print("1. Agregar peliculas\n"
@@ -8,19 +8,27 @@ while True:
           "3. Buscar peliculas por género\n"
           "4. Ver estadisticas del catalogo\n"
           "5. Salir")
+
     user_o = input("Ingrese la opcion que desea registrar: ")
+
     match user_o:
         case "1":
             print("Lista actual: ", movies)
             print("-"*5 + "Agregar peliculas: "+"-"*5)
             tittle = input("Ingrese el titulo de la pelicula: ")
             premiere = input("Ingrese el año de estreno de la pelicula: ")
-            gender = input("Ingrese el genero de la pelicula: ")
-            add_movie.append((tittle, premiere, gender))
-            movies.append((tittle, premiere, gender))
-            gender_.append(gender)
+            genre = input("Ingrese el genero de la pelicula: ")
+            print("¡Pelicula agregada con exito!")
+            add_movie.append((tittle, premiere, genre))
+            movies.append((tittle, premiere, genre))
+            genre_.append(genre)
         case "2":
-            print("Lista actual: ", movies)
+            print("\n" + "-" * 5 + " Peliculas Registradas " + "-" * 5)
+            if movies:
+                for i in movies:
+                    print(f"{i +1}, Titulo: {movies[0]},Año: {movies[1]}, Estreno: {movies[2]}")
+            else:
+                print("No hay peliculas registradas")
         case "3":
             print("Lista actual: ", movies)
             print("-"*5 + "Buscar peliculas por genero: "+ "-" * 5)
@@ -35,7 +43,7 @@ while True:
             print("Lista actual: ", movies)
             print("-"*5 + "estadisticas del catalogo: "+ "-" * 5)
             print("Peliculas registradas: ", movies)
-            print("Peliculas por genero: ", gender_)
+            print("Peliculas por genero: ", genre_)
             print("pelicula mas antigua: ", movies)
         case "6": print("Gracias por usar el programa!!")
         case _:
