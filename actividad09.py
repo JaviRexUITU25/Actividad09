@@ -41,6 +41,8 @@ while True:
                         print(f"{i+1}, genero: {movies[i]}")
                 else:
                     print("No se encontr<UNK> el genero")
+            else:
+                print("No hay peliculas registradas")
         case "4":
             print("Lista actual: ", movies)
             remove_movie = input("¿Que pelicula desea eliminar?: ")
@@ -52,7 +54,8 @@ while True:
             print("Peliculas registradas: ", movies)
             print("Peliculas por genero: ", genre_)
             print("pelicula mas antigua: ", movies)
-        case "6": print("Gracias por usar el programa!!")
+        case "6":
+            print("Gracias por usar el programa!!")
+            break
         case _:
             print("Opcion no valida, intente de nuevo.")
-    break
