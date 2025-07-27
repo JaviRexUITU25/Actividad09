@@ -1,5 +1,6 @@
 movies = []
 add_movie = []
+gender_ = []
 while True:
     print("-"*8 + "CATALOGO DE PELICULAS" + "-" *8)
     print("1. Agregar peliculas\n"
@@ -17,6 +18,7 @@ while True:
             gender = input("Ingrese el genero de la pelicula: ")
             add_movie.append((tittle, premiere, gender))
             movies.append((tittle, premiere, gender))
+            gender_.append(gender)
         case "2":
             print("Lista actual: ", movies)
         case "3":
@@ -25,4 +27,17 @@ while True:
             show_movies = input("Ingrese el genero de la pelicula que desea buscar: ")
             print("Generos: ",)
         case "4":
-            print("Lista actual: ", add_movie)
+            print("Lista actual: ", movies)
+            remove_movie = input("¿Que pelicula desea eliminar?: ")
+            movies.remove(remove_movie)
+            print("Pelicula eliminada con exito.")
+        case "5":
+            print("Lista actual: ", movies)
+            print("-"*5 + "estadisticas del catalogo: "+ "-" * 5)
+            print("Peliculas registradas: ", movies)
+            print("Peliculas por genero: ", gender_)
+            print("pelicula mas antigua: ", movies)
+        case "6": print("Gracias por usar el programa!!")
+        case _:
+            print("Opcion no valida, intente de nuevo.")
+    break
